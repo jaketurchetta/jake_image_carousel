@@ -1,5 +1,5 @@
 {
-  "name": "Airbnb",
+  "name": "airbnb",
   "version": "",
   "description": "",
   "author": "",
@@ -10,11 +10,16 @@
   "scripts": {
     "start": "nodemon server/index.js",
     "react-dev": "webpack -d --watch",
-    "seed": "psql -U postgres < schema.sql"
+    "seed": "psql -U postgres < schema.sql",
+    "jest": "jest --watchAll"
   },
   "dependencies": {
+    "@babel/polyfill": "^7.8.7",
     "axios": "^0.19.2",
+    "babel-jest": "^25.5.1",
     "cors": "^2.8.5",
+    "enzyme": "^3.11.0",
+    "enzyme-adapter-react-16": "^1.15.2",
     "express": "^4.17.1",
     "pg": "^8.0.3",
     "react": "^16.13.1",
@@ -32,7 +37,14 @@
     "eslint-plugin-jsx-a11y": "^6.2.3",
     "eslint-plugin-react": "^7.19.0",
     "eslint-plugin-react-hooks": "^2.5.1",
+    "jest": "^25.5.3",
     "webpack": "^4.43.0",
     "webpack-cli": "^3.3.11"
+  },
+   "babel": {
+    "presets": [
+      "@babel/env",
+      "@babel/react"
+    ]
   }
 }
