@@ -1,9 +1,7 @@
 import React from 'react';
 import App from '../components/App.jsx';
 import Adapter from 'enzyme-adapter-react-16';
-import Enzyme, { shallow, mount, render} from 'enzyme';
-
-Enzyme.configure({ adapter: new Adapter() });
+import { shallow, mount, render } from 'enzyme';
 
 //simple testing make it works in this file
 describe('App',() => {
@@ -30,9 +28,11 @@ describe('A suite', function() {
 describe('B suite', () => {
   it('should show text', () => {
     const wrapper = shallow(<App />);
-    const text = wrapper.find('div div')
+    const text = wrapper.find('div div')  //.find('#test')
     expect(text.text()).toBe('Im from App.jsx')
   });
 })
 
 //testing API call
+
+//testing button
