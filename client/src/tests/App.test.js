@@ -16,7 +16,7 @@ describe('App',() => {
   // })
 });
 
-//testing existence
+// testing existence
 describe('existence suite', () => {
   it('should exists', () => {
     const AppShallow = shallow(<App />);
@@ -29,23 +29,23 @@ describe('existence suite', () => {
 })
 
 //testing components div
-describe('A suite', function() {
-  it('should render without throwing an error', function() {
-    expect(shallow(<div></div>).exists()).toBe(true);
-  });
-  it('should render without throwing an error', function() {
-    expect(shallow(<h1>Im from App.jsx</h1>).exists()).toBe(true);
-  });
-});
+// describe('A suite', function() {
+//   it('should render without throwing an error', function() {
+//     expect(shallow(<div></div>).exists()).toBe(true);
+//   });
+//   it('should render without throwing an error', function() {
+//     expect(shallow(<h1>Im from App.jsx</h1>).exists()).toBe(true);
+//   });
+// });
 
-describe('B suite', () => {
-  it('should show text', () => {
-    const wrapper = shallow(<App />);
-    expect(wrapper.find('h1').first().text()).toEqual('Large Box')
-    // expect(wrapper.find('h1').second().text()).toEqual('Small Box 1')
-    expect(wrapper.find('h2').first().text()).toEqual('Im from App.jsx')
-  });
-})
+// describe('B suite', () => {
+//   it('should show text', () => {
+//     const wrapper = shallow(<App />);
+//     expect(wrapper.find('h1').first().text()).toEqual('Large Box')
+//     // expect(wrapper.find('h1').second().text()).toEqual('Small Box 1')
+//     expect(wrapper.find('h2').first().text()).toEqual('Im from App.jsx')
+//   });
+// })
 
 //testing button
 // describe('this.state suite', () => {

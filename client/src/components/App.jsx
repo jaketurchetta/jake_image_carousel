@@ -13,7 +13,6 @@ class App extends React.Component {
   }
 
 
-
 handleViewButton (event) { //working
   console.log('you click me')
   this.setState ({
