@@ -26,9 +26,9 @@ handleViewButton (event) { //working
     return (
       <div>
       <div >
-      {this.state.viewButton === false
+      {this.state.viewButton === true
         ? <MainGallery handleViewButton={this.handleViewButton} />
-        : <ViewPhotos />}
+        : <ViewPhotos handleViewButton={this.handleViewButton}/>}
         </div>
       </div>
     );

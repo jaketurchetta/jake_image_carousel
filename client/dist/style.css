@@ -95,3 +95,47 @@ body {
 }
 
 
+/* ViewPhotos.jsx */
+.leftButton {
+  position: absolute;
+  top: 45%;
+  left: 5%;
+}
+
+.rightButton {
+  position: absolute;
+  top: 45%;
+  left: 65%;
+
+}
+
+.ViewPhotosLarge {
+  width: 856px;
+  height: 642px;
+  position: absolute;
+  top: 12%;
+  left: 15%;
+  border-radius: 2%;
+}
+
+.exitButton {
+  height: 24px;
+  width: 24px;
+  display: block;
+  fill: rgb(72, 72, 72);
+  position: absolute;
+  top: 8%;
+  left: 95%;
+}
+
+.ViewPhotosDescription {
+  position: absolute;
+  top: 38%;
+  left: 77%;
+}
+
+.ViewPhotosPage {
+  position: absolute;
+  top: 31%;
+  left: 77%;
+}
