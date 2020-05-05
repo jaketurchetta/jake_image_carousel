@@ -1,4 +1,5 @@
 import React from 'react';
+import ReactDOM from 'react-dom';
 import App from '../components/App.jsx';
 import Adapter from 'enzyme-adapter-react-16';
 import { shallow, mount, render } from 'enzyme';
@@ -15,6 +16,18 @@ describe('App',() => {
   // })
 });
 
+//testing existence
+describe('existence suite', () => {
+  it('should exists', () => {
+    const AppShallow = shallow(<App />);
+    const AppMount = mount(<App />);
+    const AppRender = render(<App />)
+    expect(AppShallow.exists()).toBe(true)
+    expect(AppMount.exists()).toBe(true)
+    // expect(AppRender.exists()).toBe(true)
+  });
+})
+
 //testing components div
 describe('A suite', function() {
   it('should render without throwing an error', function() {
@@ -28,11 +41,20 @@ describe('A suite', function() {
 describe('B suite', () => {
   it('should show text', () => {
     const wrapper = shallow(<App />);
-    const text = wrapper.find('div div')  //.find('#test')
-    expect(text.text()).toBe('Im from App.jsx')
+    expect(wrapper.find('h1').first().text()).toEqual('Large Box')
+    // expect(wrapper.find('h1').second().text()).toEqual('Small Box 1')
+    expect(wrapper.find('h2').first().text()).toEqual('Im from App.jsx')
   });
 })
 
+//testing button
+// describe('this.state suite', () => {
+//   it('should check button', () => {
+//     const Appwrapper = mount(<App />);
+//     // const text = wrapper.find('div div')  //.find('#test')
+//     expect(Appwrapper.exists()).toBe(true)
+//   });
+// })
+
 //testing API call
 
-//testing button
