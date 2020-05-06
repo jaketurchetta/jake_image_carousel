@@ -1,52 +1,61 @@
 import React from 'react';
-import MainGallery from './MainGallery.jsx'
-import ViewPhotos from './ViewPhotos.jsx'
-import axios from 'axios'
+import axios from 'axios';
+import MainGallery from './MainGallery.jsx';
+import ViewPhotos from './ViewPhotos.jsx';
 
 class App extends React.Component {
   constructor(props) {
-    super(props)
+    super(props);
     this.state = {
       data: [],
-      viewButton: false
-    }
-    this.handleViewButton = this.handleViewButton.bind(this)
+      viewButton: false,
+    };
+    this.handleViewButton = this.handleViewButton.bind(this);
   }
 
-  handleError(error) {
-    console.log(error)
+  componentDidMount() {
+    this.getImage();
   }
 
   getImage() {
     axios.get('/image')
-    .then(({data}) => {
-      this.setState({
-        data: data
+      .then(({ data }) => {
+        this.setState({
+          data,
+        });
       })
-    })
-    .catch(this.handleError)
+      .catch(this.handleError);
   }
 
-handleViewButton (event) { //working
-  console.log('you click me')
-  this.setState ({
-    viewButton: !this.state.viewButton
-  })
-  console.log(this.state.viewButton)
-}
+  handleError(error, callback) {
+    callback(this.error);
+  }
 
-componentDidMount() {
-  this.getImage()
-}
+  handleViewButton() { // working
+    this.setState({
+      viewButton: !this.state.viewButton,
+    });
+    console.log(this.state.viewButton);
+  }
 
   render() {
-    console.log(this.state.data)
+    // console.log(this.state.data);
     return (
       <div>
-      <div >
-      {this.state.viewButton === true
-        ? <MainGallery handleViewButton={this.handleViewButton} />
-        : <ViewPhotos handleViewButton={this.handleViewButton}/>}
+        <div>
+          {this.state.viewButton === true
+            ? (
+              <MainGallery
+                handleViewButton={this.handleViewButton}
+                data={this.state.data}
+              />
+            )
+            : (
+              <ViewPhotos
+                handleViewButton={this.handleViewButton}
+                data={this.state.data}
+              />
+            )}
         </div>
       </div>
     );
@@ -54,5 +63,3 @@ componentDidMount() {
 }
 
 export default App;
-
-
