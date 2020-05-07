@@ -1,13 +1,16 @@
 import React from 'react';
 import axios from 'axios';
+import styled from 'styled-components';
 import MainGallery from './MainGallery.jsx';
 import ViewPhotos from './ViewPhotos.jsx';
+
 
 class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
       data: [],
+      rows: [],
       viewButton: false,
     };
     this.handleViewButton = this.handleViewButton.bind(this);
@@ -22,6 +25,7 @@ class App extends React.Component {
       .then(({ data }) => {
         this.setState({
           data,
+          rows: data.rows,
         });
       })
       .catch(this.handleError);
@@ -39,11 +43,12 @@ class App extends React.Component {
   }
 
   render() {
-    // console.log(this.state.data);
+    // console.log(this.state.data,'data');
+    // console.log(this.state.rows,'rows');
     return (
       <div>
         <div>
-          {this.state.viewButton === true
+          {this.state.viewButton === false
             ? (
               <MainGallery
                 handleViewButton={this.handleViewButton}
@@ -54,6 +59,7 @@ class App extends React.Component {
               <ViewPhotos
                 handleViewButton={this.handleViewButton}
                 data={this.state.data}
+                rows={this.state.rows}
               />
             )}
         </div>
