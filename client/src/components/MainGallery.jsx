@@ -1,15 +1,48 @@
 import React from 'react';
 import styled from 'styled-components';
 
-// const largeBox = styled.div `
-//   /* background: lightcoral; */
-//   grid-row: 1/3;
-//   grid-column: 1;
-//   /* width: 960px;
-//   height: 590px; */
-//   width: 100%;
-//   height: 100%;
-//  `
+const MainGrid = styled.main`
+  display: grid ;
+  grid-template-columns: 50% 25% 25%;
+  grid-template-rows:  295px 295px;
+`
+const LargeBox = styled.img`
+  /* background: lightcoral; */
+  grid-row: 1/3;
+  grid-column: 1;
+  /* width: 960px;
+  height: 590px; */
+  width: 100%;
+  height: 100%;
+ `
+ const SmallBox1 = styled.img`
+  background: lightblue;
+  /* width: 480px;
+  height: 295px; */
+  width: 100%;
+  height: 100%;
+ `
+ const SmallBox2 = styled.img`
+  background: lightgreen;
+  /* width: 480px;
+  height: 295px; */
+  width: 100%;
+  height: 100%;
+ `
+ const SmallBox3 = styled.img`
+  background: lightseagreen;
+  /* width: 480px;
+  height: 295px; */
+  width: 100%;
+  height: 100%;
+ `
+ const SmallBox4 = styled.img`
+  background: lightsalmon;
+  /* width: 480px;
+  height: 295px; */
+  width: 100%;
+  height: 100%;
+ `
 
 const Sharebtn = styled.button`
 position: absolute;
@@ -50,43 +83,31 @@ const MainGallery = (props) => (
     Share
     </Sharebtn>
 
-
     <Savebtn>
       <img src="https://6-pack.s3-us-west-1.amazonaws.com/icons/Screen+Shot+2020-05-06+at+11.06.35+AM.png" className="saveIcon" />
       Save
     </Savebtn>
 
-
-    <main onClick={props.handleViewButton}>
+<MainGrid onClick={props.handleViewButton}>
       <button className="Viewbtn" type="button">View Photos</button>
 
-      <div className="largeBox">
-        <img src="https://6-pack.s3-us-west-1.amazonaws.com/00/00.jpg" className="largeBox" alt="" />
-        <h1>Large Box</h1>
-      </div>
+      <LargeBox src="https://6-pack.s3-us-west-1.amazonaws.com/00/00.jpg">
+      </LargeBox>
 
-      <div className="smallBox1">
-        <img src="https://6-pack.s3-us-west-1.amazonaws.com/00/01.jpg" className="smallBox1" alt="" />
-        <h1>Small Box 1</h1>
-      </div>
+      <SmallBox1 src="https://6-pack.s3-us-west-1.amazonaws.com/00/01.jpg">
+      </SmallBox1>
 
-      <div className="smallBox2">
-        <img src="https://6-pack.s3-us-west-1.amazonaws.com/00/02.jpg" className="smallBox2" alt="" />
-        <h1>Small Box 2</h1>
-      </div>
+      <SmallBox2 src="https://6-pack.s3-us-west-1.amazonaws.com/00/02.jpg">
+      </SmallBox2>
 
-      <div className="smallBox3">
-        <img src="https://6-pack.s3-us-west-1.amazonaws.com/00/03.jpg" className="smallBox3" alt="" />
-        <h1>Small Box 3</h1>
-      </div>
+      <SmallBox3 src="https://6-pack.s3-us-west-1.amazonaws.com/00/03.jpg">
+      </SmallBox3>
 
-      <div className="smallBox4">
-        <img src="https://6-pack.s3-us-west-1.amazonaws.com/00/04.jpg" className="smallBox4" alt="" />
+      <SmallBox4 src="https://6-pack.s3-us-west-1.amazonaws.com/00/04.jpg">
+      </SmallBox4>
 
-        <h1>Small Box 4</h1>
-      </div>
+      </MainGrid>
 
-    </main>
   </div>
 );
 

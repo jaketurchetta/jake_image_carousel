@@ -11,7 +11,7 @@ position: absolute;
 top: 8%;
 left: 95%;
 color: red;
-`;
+`
 
 const ViewPhotosLarge = styled.div`
   width: 856px;
