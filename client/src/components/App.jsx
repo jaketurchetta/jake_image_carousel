@@ -12,7 +12,7 @@ class App extends React.Component {
       data: [],
       rows: [],
       viewButton: false,
-      attbId: null,
+      attbId: 0,
       // LargeBox: false,
       // SmallBox1: false,
       // SmallBox2: false,

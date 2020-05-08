@@ -102,3 +102,20 @@ body {
   top: 31%;
   left: 77%;
 }
+
+.miniGalleryUl{
+  position: absolute;
+  top: 12%;
+  left: 85%;
+}
+
+.miniGallery {
+  position: absolute;
+    left: 50%;
+    top: 50%;
+    height: 62px;
+    width: 62px;
+    transform: translate(-50%, -50%);
+    border-radius: 4px;
+
+}

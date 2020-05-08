@@ -21,16 +21,16 @@ CREATE TABLE imageArray(
 
 INSERT INTO property VALUES (0, 'Rock Reach House - as profiled in dwell');
 
-INSERT INTO imageArray VALUES (0, 0,'https://6-pack.s3-us-west-1.amazonaws.com/00/00.jpg', 'Rock Reach House - as profiled in dwell');
-INSERT INTO imageArray VALUES (1, 0, 'https://6-pack.s3-us-west-1.amazonaws.com/00/01.jpg', 'Rock Reach House - as profiled in dwell');
-INSERT INTO imageArray VALUES (2, 0,'https://6-pack.s3-us-west-1.amazonaws.com/00/02.jpg', 'Rock Reach House - as profiled in dwell');
-INSERT INTO imageArray VALUES (3, 0,'https://6-pack.s3-us-west-1.amazonaws.com/00/03.jpg', 'Rock Reach House - as profiled in dwell');
-INSERT INTO imageArray VALUES (4, 0,'https://6-pack.s3-us-west-1.amazonaws.com/00/04.jpg', 'Rock Reach House - as profiled in dwell');
-INSERT INTO imageArray VALUES (5, 0,'https://6-pack.s3-us-west-1.amazonaws.com/00/05.jpg', 'Rock Reach House - as profiled in dwell');
-INSERT INTO imageArray VALUES (6, 0,'https://6-pack.s3-us-west-1.amazonaws.com/00/06.jpg', 'Rock Reach House - as profiled in dwell');
-INSERT INTO imageArray VALUES (7, 0,'https://6-pack.s3-us-west-1.amazonaws.com/00/07.jpg', 'Rock Reach House - as profiled in dwell');
-INSERT INTO imageArray VALUES (8, 0,'https://6-pack.s3-us-west-1.amazonaws.com/00/08.jpg', 'Rock Reach House - as profiled in dwell');
-INSERT INTO imageArray VALUES (9, 0,'https://6-pack.s3-us-west-1.amazonaws.com/00/09.jpg', 'Rock Reach House - as profiled in dwell');
+INSERT INTO imageArray VALUES (0, 0,'https://6-pack.s3-us-west-1.amazonaws.com/00/0.jpg', 'Rock Reach House - mail floor');
+INSERT INTO imageArray VALUES (1, 0, 'https://6-pack.s3-us-west-1.amazonaws.com/00/1.jpg', 'Rock Reach House - dawn outside');
+INSERT INTO imageArray VALUES (2, 0,'https://6-pack.s3-us-west-1.amazonaws.com/00/2.jpg', 'Rock Reach House - sunshine outter area');
+INSERT INTO imageArray VALUES (3, 0,'https://6-pack.s3-us-west-1.amazonaws.com/00/3.jpg', 'Rock Reach House - outside Bathtub');
+INSERT INTO imageArray VALUES (4, 0,'https://6-pack.s3-us-west-1.amazonaws.com/00/4.jpg', 'Rock Reach House - noon house overview');
+INSERT INTO imageArray VALUES (5, 0,'https://6-pack.s3-us-west-1.amazonaws.com/00/5.jpg', 'Rock Reach House - as profiled in dwell');
+INSERT INTO imageArray VALUES (6, 0,'https://6-pack.s3-us-west-1.amazonaws.com/00/6.jpg', 'Rock Reach House - as profiled in dwell');
+INSERT INTO imageArray VALUES (7, 0,'https://6-pack.s3-us-west-1.amazonaws.com/00/7.jpg', 'Rock Reach House - as profiled in dwell');
+INSERT INTO imageArray VALUES (8, 0,'https://6-pack.s3-us-west-1.amazonaws.com/00/8.jpg', 'Rock Reach House - as profiled in dwell');
+INSERT INTO imageArray VALUES (9, 0,'https://6-pack.s3-us-west-1.amazonaws.com/00/9.jpg', 'Rock Reach House - as profiled in dwell');
 INSERT INTO imageArray VALUES (10, 0,'https://6-pack.s3-us-west-1.amazonaws.com/00/10.jpg', 'Rock Reach House - as profiled in dwell');
 INSERT INTO imageArray VALUES (11, 0,'https://6-pack.s3-us-west-1.amazonaws.com/00/11.jpg', 'Rock Reach House - as profiled in dwell');
 INSERT INTO imageArray VALUES (12, 0,'https://6-pack.s3-us-west-1.amazonaws.com/00/12.jpg', 'Rock Reach House - as profiled in dwell');

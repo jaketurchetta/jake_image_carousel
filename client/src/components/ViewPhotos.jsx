@@ -32,23 +32,81 @@ position: absolute;
 top: 38%;
 left: 77%;
 `
-const ViewPhotos = (props) => {
-  console.log(props.rows)
 
+// const MiniGallery = styled.ul `
+// position: absolute !important;
+//     list-style-type: none !important;
+//     left: 0px !important;
+//     transition: -ms-transform 0.3s ease-out 0s, -webkit-transform 0.3s ease-out 0s, transform 0.3s ease-out 0s !important;
+//     margin: 0px !important;
+//     padding: 0px 0px 0px 8px !important;
+// `
+// const MiniGalleryChild = styled.li`
+
+// `
+// const ViewPhotos = (props) => {
+//   console.log(props.rows)
+class ViewPhotos extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      attbId: this.props.attbId
+    }
+    this.addAttb = this.addAttb.bind(this);
+    this.minusAttb = this.minusAttb.bind(this);
+  }
+
+  addAttb() {
+    if(this.state.attbId === 18) {
+      this.setState({
+        attbId: 0
+      })
+    } else {
+      this.setState({
+        attbId: Number(this.state.attbId + Number(1))
+      })
+    }
+  }
+
+  minusAttb() {
+    if(this.state.attbId === 0) {
+      this.setState({
+        attbId: 18
+      })
+    } else {
+      this.setState({
+        attbId: Number(this.state.attbId - Number(1))
+      })
+    }
+  }
+
+render() {
   return (
     <div>
-      <button className="leftButton" type="button">left button</button>
-      <button className="rightButton" type="button">right button</button>
-      <ExitButton onClick={props.handleViewButton}> Exit button</ExitButton>
+      <button className="leftButton" type="button" onClick={this.addAttb}>left button</button>
+      <button className="rightButton" type="button" onClick={this.minusAttb}>right button</button>
+      <ExitButton onClick={this.props.handleViewButton}> Exit button</ExitButton>
 
-      <img src={`https://6-pack.s3-us-west-1.amazonaws.com/00/${props.attbId}.jpg`} className="ViewPhotosLarge" />
+      <img src={`https://6-pack.s3-us-west-1.amazonaws.com/00/${this.state.attbId}.jpg`} className="ViewPhotosLarge" />
 
 
-      <ViewPhotosPage>1/{props.rows.length}</ViewPhotosPage>
-      <ViewPhotosDescription>Rock House /description go here</ViewPhotosDescription>
+
+      <ul className='miniGalleryUl'>
+      <div>
+
+      <img src={`https://6-pack.s3-us-west-1.amazonaws.com/00/${this.state.attbId}.jpg`} className='miniGallery' />
+
+
+      </div>
+      </ul>
+
+      <ViewPhotosPage>{this.state.attbId}/{this.props.rows.length}</ViewPhotosPage>
+      <ViewPhotosDescription>{this.props.rows[1].description}</ViewPhotosDescription>
 
     </div>
   );
+}
+
 
 };
 
@@ -67,3 +125,12 @@ export default ViewPhotos;
 //    <h1>Yo it works, this is ViewPhotos.jsx</h1>
 //   </div>
 // )
+
+
+// <div>
+// <img src={`https://6-pack.s3-us-west-1.amazonaws.com/00/${Number(props.attbId) + Number(1)}.jpg`} className='miniGallery' />
+// </div>
+
+// <div>
+// <img src={`https://6-pack.s3-us-west-1.amazonaws.com/00/${Number(props.attbId) + Number(2)}.jpg`} className='miniGallery' />
+// </div>

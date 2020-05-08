@@ -110,7 +110,7 @@ class MainGallery extends React.Component {
   render() {
     return (
 
-      <div onClick={this.props.handleGetAtt}>>
+      <div onClick={this.props.handleGetAtt}>
         <Sharebtn>
           <img src="https://6-pack.s3-us-west-1.amazonaws.com/icons/Screen+Shot+2020-05-06+at+11.06.44+AM.png" className="shareIcon" />
     Share
@@ -126,19 +126,19 @@ class MainGallery extends React.Component {
 
         <MainGrid onClick={this.props.handleViewButton}>
 
-          <LargeBox src="https://6-pack.s3-us-west-1.amazonaws.com/00/00.jpg" id='00'>
+          <LargeBox src="https://6-pack.s3-us-west-1.amazonaws.com/00/0.jpg" id='0'>
           </LargeBox>
 
-          <SmallBox1 src="https://6-pack.s3-us-west-1.amazonaws.com/00/01.jpg" id='01'>
+          <SmallBox1 src="https://6-pack.s3-us-west-1.amazonaws.com/00/1.jpg" id='1'>
           </SmallBox1>
 
-          <SmallBox2 src="https://6-pack.s3-us-west-1.amazonaws.com/00/02.jpg" id='02'>
+          <SmallBox2 src="https://6-pack.s3-us-west-1.amazonaws.com/00/2.jpg" id='2'>
           </SmallBox2>
 
-          <SmallBox3 src="https://6-pack.s3-us-west-1.amazonaws.com/00/03.jpg" id='03'>
+          <SmallBox3 src="https://6-pack.s3-us-west-1.amazonaws.com/00/3.jpg" id='3'>
           </SmallBox3>
 
-          <SmallBox4 src="https://6-pack.s3-us-west-1.amazonaws.com/00/04.jpg" id='04'>
+          <SmallBox4 src="https://6-pack.s3-us-west-1.amazonaws.com/00/4.jpg" id='4'>
           </SmallBox4>
 
         </MainGrid>
