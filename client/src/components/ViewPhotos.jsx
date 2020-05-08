@@ -21,7 +21,6 @@ const ViewPhotosLarge = styled.div`
   left: 15%;
   border-radius: 2%;
 `
-
 const ViewPhotosPage = styled.div`
 position: absolute;
 top: 31%;
@@ -34,6 +33,7 @@ top: 38%;
 left: 77%;
 `
 const ViewPhotos = (props) => {
+  console.log(props.rows)
 
   return (
     <div>
@@ -41,7 +41,7 @@ const ViewPhotos = (props) => {
       <button className="rightButton" type="button">right button</button>
       <ExitButton onClick={props.handleViewButton}> Exit button</ExitButton>
 
-      <img src="https://6-pack.s3-us-west-1.amazonaws.com/00/00.jpg" className="ViewPhotosLarge" />
+      <img src={`https://6-pack.s3-us-west-1.amazonaws.com/00/${props.attbId}.jpg`} className="ViewPhotosLarge" />
 
 
       <ViewPhotosPage>1/{props.rows.length}</ViewPhotosPage>
