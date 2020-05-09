@@ -61,34 +61,53 @@ body {
 /* ViewPhotos.jsx */
 .leftButton {
   position: absolute;
-  top: 45%;
-  left: 5%;
+  top: 49%;
+  left: 4.1%;
+  border: solid grey;
+  border-width: 0 3px 3px 0;
+  display: inline-block;
+  padding: 9px;
+  transform: rotate(135deg);
+  -webkit-transform: rotate(135deg);
 }
 
 .rightButton {
   position: absolute;
-  top: 45%;
-  left: 65%;
-
+  top: 49%;
+  left: 71.5%;
+  border: solid grey;
+  border-width: 0 3px 3px 0;
+  display: inline-block;
+  padding: 9px;
+  transform: rotate(-45deg);
+  -webkit-transform: rotate(-45deg);
 }
 
 .ViewPhotosLarge {
-  width: 856px;
-  height: 642px;
+  width: 959.625px;
+  height: 639.75px;
   position: absolute;
   top: 12%;
-  left: 15%;
+  left: 13%;
   border-radius: 2%;
+
+  max-height: 75vh;
+  object-fit: contain;
+  cursor: pointer;
+  z-index: 2;
+  /* border-radius: 16px; */
+  max-width: 85%;
+  margin: 0px auto;
 }
 
 .exitButton {
-  height: 24px;
-  width: 24px;
+  height: 50px;
+  width: 50px;
   display: block;
-  fill: rgb(72, 72, 72);
   position: absolute;
-  top: 8%;
-  left: 95%;
+  border: aqua;
+  top: 7.9%;
+  left: 95.5%;
 }
 
 .ViewPhotosDescription {

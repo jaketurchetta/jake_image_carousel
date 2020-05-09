@@ -1,4 +1,5 @@
 import React from 'react';
+import ReactDOM from 'react-dom';
 import styled from 'styled-components';
 
 
@@ -10,28 +11,28 @@ fill: rgb(72, 72, 72);
 position: absolute;
 top: 8%;
 left: 95%;
-color: red;
 `
 
 const ViewPhotosLarge = styled.div`
-  width: 856px;
-  height: 642px;
-  position: absolute;
-  top: 12%;
-  left: 15%;
-  border-radius: 2%;
+
 `
 const ViewPhotosPage = styled.div`
 position: absolute;
-top: 31%;
-left: 77%;
+top: 35%;
+left: 80%;
+color: #454242;
+font-family: 'Roboto',sans-serif;
 `
 
 const ViewPhotosDescription = styled.div `
 position: absolute;
-top: 38%;
-left: 77%;
+top: 39.5%;
+left: 80%;
+color: #6b6767;
+font-family: 'Roboto',sans-serif;
 `
+
+
 
 // const MiniGallery = styled.ul `
 // position: absolute !important;
@@ -56,8 +57,21 @@ class ViewPhotos extends React.Component {
     this.minusAttb = this.minusAttb.bind(this);
   }
 
+  minusAttb() {
+    console.log(this.state.attbId)
+    if(this.state.attbId <= 0 ) {
+      this.setState({
+        attbId: 17
+      })
+    } else {
+      this.setState({
+        attbId: Number(this.state.attbId - Number(1))
+      })
+    }
+  }
+
   addAttb() {
-    if(this.state.attbId === 18) {
+    if(this.state.attbId === 17) {
       this.setState({
         attbId: 0
       })
@@ -68,24 +82,28 @@ class ViewPhotos extends React.Component {
     }
   }
 
-  minusAttb() {
-    if(this.state.attbId === 0) {
-      this.setState({
-        attbId: 18
-      })
-    } else {
-      this.setState({
-        attbId: Number(this.state.attbId - Number(1))
-      })
-    }
-  }
+
 
 render() {
+  console.log(this.props.data)
   return (
     <div>
-      <button className="leftButton" type="button" onClick={this.addAttb}>left button</button>
-      <button className="rightButton" type="button" onClick={this.minusAttb}>right button</button>
-      <ExitButton onClick={this.props.handleViewButton}> Exit button</ExitButton>
+    <svg onClick={this.props.handleViewButton} className='exitButton' viewPort="0 0 12 12" version="1.1"
+    xmlns="http://www.w3.org/2000/svg">
+   <line x1="1" y1="25"
+         x2="25" y2="1"
+         stroke="black"
+         stroke-width="2"/>
+   <line x1="1" y1="1"
+         x2="25" y2="25"
+         stroke="black"
+         stroke-width="2"/>
+</svg>
+
+      <button className="leftButton" type="button" onClick={this.minusAttb}></button>
+      <button className="rightButton" type="button" onClick={this.addAttb}></button>
+
+
 
       <img src={`https://6-pack.s3-us-west-1.amazonaws.com/00/${this.state.attbId}.jpg`} className="ViewPhotosLarge" />
 
@@ -100,8 +118,8 @@ render() {
       </div>
       </ul>
 
-      <ViewPhotosPage>{this.state.attbId}/{this.props.rows.length}</ViewPhotosPage>
-      <ViewPhotosDescription>{this.props.rows[1].description}</ViewPhotosDescription>
+      <ViewPhotosPage>{this.state.attbId} / {this.props.rows.length}</ViewPhotosPage>
+      <ViewPhotosDescription>{this.props.rows[this.state.attbId].description}</ViewPhotosDescription>
 
     </div>
   );
