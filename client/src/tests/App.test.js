@@ -24,6 +24,8 @@ describe('existence suite', () => {
     const AppRender = render(<App />)
     expect(AppShallow.exists()).toBe(true)
     expect(AppMount.exists()).toBe(true)
+    expect(AppMount.instance().componentDidMount())
+    expect(AppMount.instance().getImage())
     // expect(AppRender.exists()).toBe(true)
   });
 })
