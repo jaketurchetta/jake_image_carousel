@@ -20,7 +20,8 @@ class App extends React.Component {
       // SmallBox4: false
     };
     this.handleViewButton = this.handleViewButton.bind(this);
-    this.handleGetAtt = this.handleGetAtt.bind(this)
+    this.handleGetAtt = this.handleGetAtt.bind(this);
+    this.handleRerenderButton = this.handleRerenderButton.bind(this);
   }
 
   componentDidMount() {
@@ -38,28 +39,35 @@ class App extends React.Component {
       .catch(this.handleError);
   }
 
-  handleError(error, callback) {
-    callback(this.error);
+  handleError(error) {
+    console.log(error);
   }
 
   handleViewButton() { // working
     this.setState({
       viewButton: !this.state.viewButton,
     });
-    console.log(this.state.viewButton);
+  }
+
+
+  handleRerenderButton() { // working
+    console.log('you click me')
+    this.setState({
+      viewButton: true,
+    });
   }
 
   handleGetAtt(e) {
-    console.log(e.target.id)
+    console.log(e.target.id,'e.target')
     this.setState({
-      attbId: e.target.id
-    })
+      attbId: e.target.id,
+    });
   }
 
   render() {
     // console.log(this.state.data,'data');
     // console.log(this.state.rows,'rows');
-    console.log(this.state.attbId,'this.state.attbID')
+    console.log(this.state.attbId, 'this.state.attbID');
     return (
       <div>
         <div>
@@ -79,6 +87,8 @@ class App extends React.Component {
                 data={this.state.data}
                 rows={this.state.rows}
                 attbId={this.state.attbId}
+                handleGetAtt={this.handleGetAtt}
+                handleRerenderButton={this.handleRerenderButton}
               />
             )}
         </div>
