@@ -5,7 +5,7 @@ const pool = require('../database/index')
 const path = require('path');
 
 
-const PORT = 3001;
+const PORT = 3003;
 
 // const {getImage} = require('./controller.js')
 
