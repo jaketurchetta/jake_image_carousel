@@ -2,52 +2,9 @@ body {
   font-family: sans-serif, arial;
 }
 
-.Viewbtn {
-  position: absolute;
-  top: 62%;
-  left: 93%;
-  transform: translate(-50%, -50%);
-  -ms-transform: translate(-50%, -50%);
-  background-color: white;
-  font-size: 15px;
-  padding: 11px 18px;
-  border: none;
-  cursor: pointer;
-  border-radius: 6px;
-}
-
-.Sharebtn {
-  position: absolute;
-  top: 6.5%;
-  left: 90%;
-  transform: translate(-50%, -50%);
-  -ms-transform: translate(-50%, -50%);
-  background-color: white;
-  font-size: 14px;
-  padding: 10px 18px;
-  border: none;
-  cursor: pointer;
-  border-radius: 6px;
-}
-
 .shareIcon {
   width: 20px;
   height: 20px;
-}
-
-
-.Savebtn {
-  position: absolute;
-  top: 6.5%;
-  left: 95%;
-  transform: translate(-50%, -50%);
-  -ms-transform: translate(-50%, -50%);
-  background-color: white;
-  font-size: 14px;
-  padding: 10px 18px;
-  border: none;
-  cursor: pointer;
-  border-radius: 6px;
 }
 
 .saveIcon {
@@ -56,32 +13,7 @@ body {
   position: sticky;
 }
 
-
-
 /* ViewPhotos.jsx */
-.leftButton {
-  position: absolute;
-  top: 49%;
-  left: 4.1%;
-  border: solid grey;
-  border-width: 0 3px 3px 0;
-  display: inline-block;
-  padding: 9px;
-  transform: rotate(135deg);
-  -webkit-transform: rotate(135deg);
-}
-
-.rightButton {
-  position: absolute;
-  top: 49%;
-  left: 71.5%;
-  border: solid grey;
-  border-width: 0 3px 3px 0;
-  display: inline-block;
-  padding: 9px;
-  transform: rotate(-45deg);
-  -webkit-transform: rotate(-45deg);
-}
 
 .ViewPhotosLarge {
   width: 959.625px;
@@ -108,33 +40,4 @@ body {
   border: aqua;
   top: 7.9%;
   left: 95.5%;
-}
-
-.ViewPhotosDescription {
-  position: absolute;
-  top: 38%;
-  left: 77%;
-}
-
-.ViewPhotosPage {
-  position: absolute;
-  top: 31%;
-  left: 77%;
-}
-
-.miniGalleryUl{
-  position: absolute;
-  top: 12%;
-  left: 85%;
-}
-
-.miniGallery {
-  position: absolute;
-    left: 50%;
-    top: 50%;
-    height: 62px;
-    width: 62px;
-    transform: translate(-50%, -50%);
-    border-radius: 4px;
-
 }
