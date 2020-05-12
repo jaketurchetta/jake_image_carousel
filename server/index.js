@@ -10,8 +10,8 @@ const PORT = 3003;
 // const {getImage} = require('./controller.js')
 
 //middleware
-app.use(cors());  //need npm i cors
-app.use(express.json())
+// app.use(cors());  //need npm i cors
+// app.use(express.json())
 
 app.use(express.static(path.join(__dirname, '../client/dist')))
 

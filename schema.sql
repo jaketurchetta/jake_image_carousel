@@ -1,8 +1,8 @@
-DROP DATABASE IF EXISTS airbnbCarousel;
+DROP DATABASE IF EXISTS airbnbcarousel;
 
-CREATE DATABASE airbnbCarousel;
+CREATE DATABASE airbnbcarousel;
 
-\c airbnbCarousel;
+\c airbnbcarousel;
 
 DROP TABLE IF EXISTS property;
 DROP TABLE IF EXISTS imageArray;
