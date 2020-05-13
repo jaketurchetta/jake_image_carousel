@@ -82,6 +82,7 @@ class ViewPhotos extends React.Component {
   }
 
   addAttb() {
+    console.log(this.state.attbId);
     if (this.state.attbId === 17) {
       this.setState({
         attbId: 0,
@@ -104,7 +105,6 @@ class ViewPhotos extends React.Component {
 
       <img src={`https://6-pack.s3-us-west-1.amazonaws.com/00/${this.state.attbId}.jpg`} className="ViewPhotosLarge" />
 
-
         <ViewPhotosPage>
           {this.state.attbId}
           {' '}
@@ -112,8 +112,8 @@ class ViewPhotos extends React.Component {
           {' '}
           {this.props.rows.length}
         </ViewPhotosPage>
-        <ViewPhotosDescription>{this.props.rows[this.state.attbId].description}</ViewPhotosDescription>
 
+        <ViewPhotosDescription>{this.props.rows[this.state.attbId].description}</ViewPhotosDescription>
 
         <ViewPhotosMini
         attbId={this.state.attbId}

@@ -1,93 +1,47 @@
 import React from 'react';
 import styled from 'styled-components';
+import MainGalleryBoxes from './MainGalleryBoxes.jsx';
 
-const MainGrid = styled.div`
-  display: grid ;
-  grid-template-columns: 50% 25% 25%;
-  grid-template-rows:  295px 295px;
-  width: 100%
-  height: 400px;
+const LargeParent = styled.div`
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  width: 100%;
+  height: 502px
   cursor: pointer;
+`;
+
+const LargeChild = styled.div`
+  justify-self: center;
+  width: 100%;
+  height: 502px;
+  border: 1px solid grey;
   overflow: hidden;
 `;
 
 const LargeBox = styled.img`
-  grid-row: 1/3;
-  grid-column: 1;
   width: 100%;
-  height: 100%
-  border: 2px solid black;
-  &:hover  {
-    transform: scale(1.1);
-    transition: 0.5s;
-    overflow: hidden;
-  }
- `;
-
-const SmallBox1 = styled.img`
-  background: lightblue;
-  /* width: 480px;
-  height: 295px; */
-  width: 100%;
-  height: 100%;
-  border: 2px solid black;
+  height: 502px;
+  object-fit: cover;
   &:hover {
-    transform: scale(1.1);
-    transition: 0.5s;
-    overflow: hidden;
+    transform: scale(1.2);
   }
- `;
-const SmallBox2 = styled.img`
-  background: lightgreen;
-  /* width: 480px;
-  height: 295px; */
-  overflow: hidden;
-  width: 100%;
-  height: 100%;
-  border: 2px solid black;
-  &:hover ${Sharebtn}{
-    transform: scale(1.1);
-    transition: 0.5s;
-  }
- `;
-const SmallBox3 = styled.img`
-  background: lightseagreen;
-  /* width: 480px;
-  height: 295px; */
-  overflow: hidden;
-  width: 100%;
-  height: 100%;
-  border: 2px solid black;
-  &:hover {
-    transform: scale(1.1);
-    transition: 0.5s;
-  }
- `;
-const SmallBox4 = styled.img`
-  background: lightsalmon;
-  /* width: 480px;
-  height: 295px; */
-  width: 100%;
-  height: 100%;
-  border: 2px solid black;
-  &:hover {
-    transform: scale(1.1);
-    transition: 0.5s;
-  }
- `;
+  transition: 0.5s;
+`;
 
 const Sharebtn = styled.button`
-position: absolute;
-top: 6.5%;
-left: 90%;
-transform: translate(-50%, -50%);
--ms-transform: translate(-50%, -50%);
-background-color: white;
-font-size: 14px;
-padding: 10px 18px;
-border: none;
-cursor: pointer;
-border-radius: 6px;
+  position: absolute;
+  top: 6.5%;
+  left: 90%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  background-color: white;
+  font-size: 14px;
+  padding: 7px 16px;
+  border: none;
+  z-index: 10;
+  cursor: pointer;
+  border-radius: 6px;
 `;
 
 const Savebtn = styled.button`
@@ -98,71 +52,53 @@ const Savebtn = styled.button`
   -ms-transform: translate(-50%, -50%);
   background-color: white;
   font-size: 14px;
-  padding: 10px 18px;
+  padding: 7px 16px;
   border: none;
+  z-index: 10;
   cursor: pointer;
   border-radius: 6px;
 `;
 
 const Viewbtn = styled.button`
   position: absolute;
-  top: 60%;
+  top: 52%;
   left: 93%;
+  font-family: Circular,-apple-system,BlinkMacSystemFont,Roboto,Helvetica Neue,sans-serif;
   transform: translate(-50%, -50%);
   -ms-transform: translate(-50%, -50%);
   background-color: white;
+  display: inline-block;
   font-size: 15px;
-  padding: 11px 18px;
+  padding: 7px 16px;
   border: none;
+  z-index: 10;
   cursor: pointer;
   border-radius: 6px;
+  background: #ffffff;
+border-color: transparent;
+color: #484848;
+letter-spacing: normal;
 `
 
-// const MainGallery = (props) => (
-class MainGallery extends React.Component {
-  constructor(props) {
-    super(props);
-  }
+export default function MainGallery(props) {
 
-  render() {
-    return (
+  return (
+    <div >
 
-      <div onClick={this.props.handleGetAtt}>
-        <Sharebtn>
-          <img src="https://6-pack.s3-us-west-1.amazonaws.com/icons/Screen+Shot+2020-05-06+at+11.06.44+AM.png" className="shareIcon" />
-          Share
-        </Sharebtn>
+      <Viewbtn onClick={props.handleViewButton}>View Photos</Viewbtn>
 
-        <Savebtn>
-          <img src="https://6-pack.s3-us-west-1.amazonaws.com/icons/Screen+Shot+2020-05-06+at+11.06.35+AM.png" className="saveIcon" />
-          Save
-        </Savebtn>
+      <LargeParent onClick={props.handleViewButton} >
+        <LargeChild onClick={props.handleGetAtt}>
+          <LargeBox src="https://6-pack.s3-us-west-1.amazonaws.com/00/0.jpg" id='0' />
+        </LargeChild>
+        <MainGalleryBoxes
+          data={props.data}
+          handleViewButton={props.handleViewButton}
+          handleGetAtt={props.handleGetAtt}
+        />
+      </LargeParent>
 
-        <Viewbtn>View Photos</Viewbtn>
+    </div>
 
-
-        <MainGrid onClick={this.props.handleViewButton}>
-          <LargeBox src="https://6-pack.s3-us-west-1.amazonaws.com/00/0.jpg" id="0" />
-
-          <SmallBox1 src="https://6-pack.s3-us-west-1.amazonaws.com/00/1.jpg" id="1" />
-
-          <SmallBox2 src="https://6-pack.s3-us-west-1.amazonaws.com/00/2.jpg" id="2" />
-
-          <SmallBox3 src="https://6-pack.s3-us-west-1.amazonaws.com/00/3.jpg" id="3" />
-
-          <SmallBox4 src="https://6-pack.s3-us-west-1.amazonaws.com/00/4.jpg" id="4" />
-        </MainGrid>
-
-
-      </div>
-    );
-  }
+  );
 }
-
-export default MainGallery;
-
-
-// <MainGrid onClick={() => {
-//   this.props.handleGetAtt();
-//   this.props.handleViewButton();
-// }}>

@@ -29,7 +29,7 @@ class App extends React.Component {
   }
 
   getImage() {
-    axios.get('/image')
+    axios.get('/carousel')
       .then(({ data }) => {
         this.setState({
           data,
