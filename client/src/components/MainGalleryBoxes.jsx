@@ -2,12 +2,12 @@ import React from 'react';
 import styled from 'styled-components';
 
 const SmallParent = styled.div`
-display: flex;
-flex-flow: column wrap;
-cursor: pointer;
-border: 1px solid grey;
-width: 100%;
-height: 502px;
+  display: flex;
+  flex-flow: column wrap;
+  cursor: pointer;
+  border: 1px solid grey;
+  width: 100%;
+  height: 502px;
 `;
 
 const SmallChild = styled.div`
@@ -29,31 +29,28 @@ const SmallBox = styled.img`
 `;
 
 export default function MainGalleryBoxes(props) {
-
-
   return (
     <div onClick={props.handleGetAtt}>
-    <SmallParent onClick={props.handleViewButton} >
+      <SmallParent onClick={props.handleViewButton}>
 
-      <SmallChild>
-        <SmallBox src="https://6-pack.s3-us-west-1.amazonaws.com/00/1.jpg" id='1'/>
-      </SmallChild>
+        <SmallChild>
+          <SmallBox src="https://6-pack.s3-us-west-1.amazonaws.com/00/1.jpg" id="1" />
+        </SmallChild>
 
-      <SmallChild>
-        <SmallBox src="https://6-pack.s3-us-west-1.amazonaws.com/00/2.jpg" id='2' />
-      </SmallChild>
+        <SmallChild>
+          <SmallBox src="https://6-pack.s3-us-west-1.amazonaws.com/00/2.jpg" id="2" />
+        </SmallChild>
 
-      <SmallChild>
-        <SmallBox src="https://6-pack.s3-us-west-1.amazonaws.com/00/3.jpg" id='3' />
-      </SmallChild>
+        <SmallChild>
+          <SmallBox src="https://6-pack.s3-us-west-1.amazonaws.com/00/3.jpg" id="3" />
+        </SmallChild>
 
-      <SmallChild>
-        <SmallBox src="https://6-pack.s3-us-west-1.amazonaws.com/00/4.jpg" id='4'/>
-      </SmallChild>
+        <SmallChild>
+          <SmallBox src="https://6-pack.s3-us-west-1.amazonaws.com/00/4.jpg" id="4" />
+        </SmallChild>
 
 
-
-    </SmallParent>
+      </SmallParent>
     </div>
   );
 }

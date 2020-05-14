@@ -75,21 +75,20 @@ const Viewbtn = styled.button`
   cursor: pointer;
   border-radius: 6px;
   background: #ffffff;
-border-color: transparent;
-color: #484848;
-letter-spacing: normal;
-`
+  border-color: transparent;
+  color: #484848;
+  letter-spacing: normal;
+`;
 
 export default function MainGallery(props) {
-
   return (
-    <div >
+    <div>
 
       <Viewbtn onClick={props.handleViewButton}>View Photos</Viewbtn>
 
-      <LargeParent onClick={props.handleViewButton} >
+      <LargeParent onClick={props.handleViewButton}>
         <LargeChild onClick={props.handleGetAtt}>
-          <LargeBox src="https://6-pack.s3-us-west-1.amazonaws.com/00/0.jpg" id='0' />
+          <LargeBox src="https://6-pack.s3-us-west-1.amazonaws.com/00/0.jpg" id="0" />
         </LargeChild>
         <MainGalleryBoxes
           data={props.data}

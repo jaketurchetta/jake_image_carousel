@@ -17,30 +17,25 @@ const ImageBox = styled.img`
 `;
 
 export default function ViewPhotosmini(props) {
-
   if (props.attbId <= 1) {
     return (
-      <ImageUl >
-        <ImageBox src={`https://6-pack.s3-us-west-1.amazonaws.com/00/${Number(props.attbId) + Number(18 - 2)}.jpg`}></ImageBox >
-        <ImageBox src={`https://6-pack.s3-us-west-1.amazonaws.com/00/${Number(props.attbId) + Number(18 - 1)}.jpg`}></ImageBox >
-        <ImageBox src={`https://6-pack.s3-us-west-1.amazonaws.com/00/${Number(props.attbId)}.jpg`}></ImageBox >
-        <ImageBox src={`https://6-pack.s3-us-west-1.amazonaws.com/00/${Number(props.attbId) + Number(1)}.jpg`}></ImageBox >
-        <ImageBox src={`https://6-pack.s3-us-west-1.amazonaws.com/00/${Number(props.attbId) + Number(2)}.jpg`}></ImageBox >
+      <ImageUl>
+        <ImageBox src={`https://6-pack.s3-us-west-1.amazonaws.com/00/${Number(props.attbId) + Number(18 - 2)}.jpg`} />
+        <ImageBox src={`https://6-pack.s3-us-west-1.amazonaws.com/00/${Number(props.attbId) + Number(18 - 1)}.jpg`} />
+        <ImageBox src={`https://6-pack.s3-us-west-1.amazonaws.com/00/${Number(props.attbId)}.jpg`} />
+        <ImageBox src={`https://6-pack.s3-us-west-1.amazonaws.com/00/${Number(props.attbId) + Number(1)}.jpg`} />
+        <ImageBox src={`https://6-pack.s3-us-west-1.amazonaws.com/00/${Number(props.attbId) + Number(2)}.jpg`} />
       </ImageUl>
-    );
-  } else {
-    return (
-      <ImageUl >
-        <ImageBox src={`https://6-pack.s3-us-west-1.amazonaws.com/00/${Number(props.attbId) - Number(2)}.jpg`} ></ImageBox >
-        <ImageBox src={`https://6-pack.s3-us-west-1.amazonaws.com/00/${Number(props.attbId) - Number(1)}.jpg`} ></ImageBox >
-        <ImageBox src={`https://6-pack.s3-us-west-1.amazonaws.com/00/${Number(props.attbId)}.jpg`} ></ImageBox >
-        <ImageBox src={`https://6-pack.s3-us-west-1.amazonaws.com/00/${Number(props.attbId) + Number(1)}.jpg`} ></ImageBox >
-        <ImageBox src={`https://6-pack.s3-us-west-1.amazonaws.com/00/${Number(props.attbId) + Number(2)}.jpg`} ></ImageBox >
-      </ImageUl>
-
     );
   }
+  return (
+    <ImageUl>
+      <ImageBox src={`https://6-pack.s3-us-west-1.amazonaws.com/00/${Number(props.attbId) - Number(2)}.jpg`} />
+      <ImageBox src={`https://6-pack.s3-us-west-1.amazonaws.com/00/${Number(props.attbId) - Number(1)}.jpg`} />
+      <ImageBox src={`https://6-pack.s3-us-west-1.amazonaws.com/00/${Number(props.attbId)}.jpg`} />
+      <ImageBox src={`https://6-pack.s3-us-west-1.amazonaws.com/00/${Number(props.attbId) + Number(1)}.jpg`} />
+      <ImageBox src={`https://6-pack.s3-us-west-1.amazonaws.com/00/${Number(props.attbId) + Number(2)}.jpg`} />
+    </ImageUl>
 
+  );
 }
-
-
