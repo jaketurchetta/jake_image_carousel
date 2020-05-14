@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<coverage generated="1589241006171" clover="3.2.0">
+  <project timestamp="1589241006171" name="All files">
+    <metrics statements="54" coveredstatements="37" conditionals="8" coveredconditionals="1" methods="18" coveredmethods="10" elements="80" coveredelements="48" complexity="0" loc="54" ncloc="54" packages="2" files="6" classes="6"/>
+    <package name="client.src.components">
+      <metrics statements="52" coveredstatements="35" conditionals="8" coveredconditionals="1" methods="17" coveredmethods="9"/>
+      <file name="App.jsx" path="/Users/justinguan/Desktop/HR/HRSF127/projects/Justin_AirBnB_Service/client/src/components/App.jsx">
+        <metrics statements="16" coveredstatements="10" conditionals="2" coveredconditionals="1" methods="9" coveredmethods="5"/>
+        <line num="10" count="2" type="stmt"/>
+        <line num="11" count="2" type="stmt"/>
+        <line num="22" count="2" type="stmt"/>
+        <line num="23" count="2" type="stmt"/>
+        <line num="24" count="2" type="stmt"/>
+        <line num="28" count="3" type="stmt"/>
+        <line num="32" count="4" type="stmt"/>
+        <line num="34" count="0" type="stmt"/>
+        <line num="43" count="1" type="stmt"/>
+        <line num="47" count="0" type="stmt"/>
+        <line num="54" count="0" type="stmt"/>
+        <line num="55" count="0" type="stmt"/>
+        <line num="61" count="0" type="stmt"/>
+        <line num="62" count="0" type="stmt"/>
+        <line num="70" count="2" type="stmt"/>
+        <line num="71" count="2" type="stmt"/>
+      </file>
+      <file name="MainGallery.jsx" path="/Users/justinguan/Desktop/HR/HRSF127/projects/Justin_AirBnB_Service/client/src/components/MainGallery.jsx">
+        <metrics statements="11" coveredstatements="11" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="2"/>
+        <line num="4" count="2" type="stmt"/>
+        <line num="14" count="2" type="stmt"/>
+        <line num="27" count="2" type="stmt"/>
+        <line num="40" count="2" type="stmt"/>
+        <line num="53" count="2" type="stmt"/>
+        <line num="66" count="2" type="stmt"/>
+        <line num="79" count="2" type="stmt"/>
+        <line num="93" count="2" type="stmt"/>
+        <line num="107" count="2" type="stmt"/>
+        <line num="124" count="4" type="stmt"/>
+        <line num="128" count="4" type="stmt"/>
+      </file>
+      <file name="Svg.jsx" path="/Users/justinguan/Desktop/HR/HRSF127/projects/Justin_AirBnB_Service/client/src/components/Svg.jsx">
+        <metrics statements="2" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="0"/>
+        <line num="4" count="2" type="stmt"/>
+        <line num="5" count="0" type="stmt"/>
+      </file>
+      <file name="ViewPhotos.jsx" path="/Users/justinguan/Desktop/HR/HRSF127/projects/Justin_AirBnB_Service/client/src/components/ViewPhotos.jsx">
+        <metrics statements="18" coveredstatements="11" conditionals="4" coveredconditionals="0" methods="4" coveredmethods="2"/>
+        <line num="10" count="2" type="stmt"/>
+        <line num="20" count="2" type="stmt"/>
+        <line num="28" count="2" type="stmt"/>
+        <line num="36" count="2" type="stmt"/>
+        <line num="48" count="2" type="stmt"/>
+        <line num="63" count="2" type="stmt"/>
+        <line num="64" count="2" type="stmt"/>
+        <line num="67" count="2" type="stmt"/>
+        <line num="68" count="2" type="stmt"/>
+        <line num="72" count="0" type="stmt"/>
+        <line num="73" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="74" count="0" type="stmt"/>
+        <line num="78" count="0" type="stmt"/>
+        <line num="85" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="86" count="0" type="stmt"/>
+        <line num="90" count="0" type="stmt"/>
+        <line num="97" count="2" type="stmt"/>
+        <line num="98" count="2" type="stmt"/>
+      </file>
+      <file name="ViewPhotosMini.jsx" path="/Users/justinguan/Desktop/HR/HRSF127/projects/Justin_AirBnB_Service/client/src/components/ViewPhotosMini.jsx">
+        <metrics statements="5" coveredstatements="2" conditionals="2" coveredconditionals="0" methods="1" coveredmethods="0"/>
+        <line num="5" count="2" type="stmt"/>
+        <line num="10" count="2" type="stmt"/>
+        <line num="21" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="22" count="0" type="stmt"/>
+        <line num="32" count="0" type="stmt"/>
+      </file>
+    </package>
+    <package name="testing">
+      <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+      <file name="sum.js" path="/Users/justinguan/Desktop/HR/HRSF127/projects/Justin_AirBnB_Service/testing/sum.js">
+        <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+        <line num="2" count="1" type="stmt"/>
+        <line num="4" count="1" type="stmt"/>
+      </file>
+    </package>
+  </project>
+</coverage>
