@@ -5,9 +5,17 @@ import Svg from './Svg.jsx';
 import ViewPhotosMini from './ViewPhotosMini.jsx';
 // import ImageList from './ImageList.jsx'
 
+const MainMian = styled.div`
+background-color: #FFFFFF;
+background-repeat: no-repeat;
+background-position: center center;
+position: absolute;
+width: 100%;
+height: 100%;
+overflow:visible;
+`;
 
-
-const ExitButton = styled.button`
+const ExitButton = styled.div`
 height: 24px;
 width: 24px;
 display: block;
@@ -57,6 +65,22 @@ const RightButton = styled.button`
   -webkit-transform: rotate(-45deg);
 `;
 
+const ViewPhotosLarge = styled.img`
+  width: 959.625px;
+  height: 639.75px;
+  position: absolute;
+  top: 12%;
+  left: 13%;
+  border-radius: 2%;
+
+  max-height: 75vh;
+  object-fit: contain;
+  cursor: pointer;
+  z-index: 2;
+  /* border-radius: 16px; */
+  max-width: 85%;
+  margin: 0px auto;
+`;
 
 class ViewPhotos extends React.Component {
   constructor(props) {
@@ -82,6 +106,7 @@ class ViewPhotos extends React.Component {
   }
 
   addAttb() {
+    console.log(this.state.attbId);
     if (this.state.attbId === 17) {
       this.setState({
         attbId: 0,
@@ -96,14 +121,15 @@ class ViewPhotos extends React.Component {
   render() {
     console.log(this.props.data);
     return (
-      <div>
-      <Svg handleViewButton={this.props.handleViewButton}/>
+      <MainMian>
+        <ExitButton>
+          <Svg handleViewButton={this.props.handleViewButton} />
+        </ExitButton>
 
-      <LeftButton onClick={this.minusAttb}/>
-      <RightButton onClick={this.addAttb}/>
+        <LeftButton onClick={this.minusAttb} />
+        <RightButton onClick={this.addAttb} />
 
-      <img src={`https://6-pack.s3-us-west-1.amazonaws.com/00/${this.state.attbId}.jpg`} className="ViewPhotosLarge" />
-
+        <ViewPhotosLarge src={`https://6-pack.s3-us-west-1.amazonaws.com/00/${this.state.attbId}.jpg`} />
 
         <ViewPhotosPage>
           {this.state.attbId}
@@ -112,17 +138,17 @@ class ViewPhotos extends React.Component {
           {' '}
           {this.props.rows.length}
         </ViewPhotosPage>
+
         <ViewPhotosDescription>{this.props.rows[this.state.attbId].description}</ViewPhotosDescription>
 
-
         <ViewPhotosMini
-        attbId={this.state.attbId}
-        data={this.props.data}
-        handleGetAtt={this.props.handleGetAtt}
-        handleRerenderButton={this.props.handleRerenderButton}
-          />
+          attbId={this.state.attbId}
+          data={this.props.data}
+          handleGetAtt={this.props.handleGetAtt}
+          handleRerenderButton={this.props.handleRerenderButton}
+        />
 
-      </div>
+      </MainMian>
     );
   }
 }

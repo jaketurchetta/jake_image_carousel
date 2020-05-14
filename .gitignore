@@ -27,3 +27,6 @@ client/dist/bundle.js
 #password for database
 database/index.js
 
+
+#save for refactoring later
+client/src/components/Save.jsx

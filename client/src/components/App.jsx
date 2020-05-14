@@ -29,7 +29,7 @@ class App extends React.Component {
   }
 
   getImage() {
-    axios.get('/image')
+    axios.get('/carousel')
       .then(({ data }) => {
         this.setState({
           data,
@@ -51,14 +51,14 @@ class App extends React.Component {
 
 
   handleRerenderButton() { // working
-    console.log('you click me')
+    console.log('you click me');
     this.setState({
       viewButton: true,
     });
   }
 
   handleGetAtt(e) {
-    console.log(e.target.id,'e.target')
+    console.log(e.target.id, 'e.target');
     this.setState({
       attbId: e.target.id,
     });

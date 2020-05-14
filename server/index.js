@@ -17,7 +17,7 @@ app.use(express.static(path.join(__dirname, '../client/dist')))
 
 
 //routes
-app.get('/image', async (req, res) => {
+app.get('/carousel', async (req, res) => {
   try {
     const image = await pool.query('SELECT * FROM imageArray')
     res.json(image)
