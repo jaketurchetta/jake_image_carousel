@@ -1,12 +1,16 @@
 version: '3.1'
 
 services:
-  carousel:
-    build: ./carousel
+  airbnbcarousel:
+    build: Service/
     depends_on:
       - 'database'
     ports:
       - '3003:3003'
 
+
   database:
-XXXXXX?????
+    build: Database/
+    ports:
+    - '5432:5432'
+
