@@ -23,7 +23,7 @@ coverage
 
 # Compiled Dirs (http://nodejs.org/api/addons.html)
 
-client/dist/bundle.js
+# client/dist/bundle.js
 
 #password for database
 database/index.js
