@@ -13,7 +13,6 @@
     "seed": "psql -U postgres < schema.sql",
     "jest": "jest --watchAll",
     "enlint": "eslint --ext jsx . --fix"
-
   },
   "dependencies": {
     "@babel/polyfill": "^7.8.7",
