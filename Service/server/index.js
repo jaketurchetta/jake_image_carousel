@@ -15,6 +15,13 @@ const PORT = 3003;
 
 app.use(express.static(path.join(__dirname, '../client/dist')))
 
+// for compression-webpack-plugin
+app.get('*.js', function (req, res, next) {
+  req.url = req.url + '.gz';
+  res.set('Content-Encoding', 'gzip');
+  next();
+});
+
 //routes
 app.get('/carousel', async (req, res) => {
   try {

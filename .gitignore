@@ -1,10 +1,10 @@
-Service/client/dist/bundle.js
 
-Service/node_modules
-Service/coverage
 
-#password for database
-Service/database/index.js	database/index.js
+# Service/node_modules
+# Service/coverage
 
-#save for refactoring later
-Service/client/src/components/Save.jsx
+# #password for database
+# Service/database/index.js
+
+# #save for refactoring later
+# Service/client/src/components/Save.jsx
