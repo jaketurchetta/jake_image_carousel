@@ -3,24 +3,18 @@ const app = express();
 const cors = require('cors')
 const pool = require('../database/index')
 const path = require('path');
+const expressStaticGzip = require('express-static-gzip')
 
 
 const PORT = 3003;
 
-// const {getImage} = require('./controller.js')
+const {getImage} = require('./controller.js')
 
-//middleware
-// app.use(cors());  //need npm i cors
-// app.use(express.json())
+// middleware
+app.use(cors());  //need npm i cors
+app.use(express.json())
 
-app.use(express.static(path.join(__dirname, '../client/dist')))
-
-// for compression-webpack-plugin
-app.get('*.js', function (req, res, next) {
-  req.url = req.url + '.gz';
-  res.set('Content-Encoding', 'gzip');
-  next();
-});
+app.use('/', expressStaticGzip('../client/dist'))
 
 //routes
 app.get('/carousel', async (req, res) => {
