@@ -8,13 +8,13 @@ const expressStaticGzip = require('express-static-gzip')
 
 const PORT = 3003;
 
-const {getImage} = require('./controller.js')
+// const {getImage} = require('./controller.js')
 
-// middleware
+//middleware
 app.use(cors());  //need npm i cors
 app.use(express.json())
 
-app.use('/', expressStaticGzip('../client/dist'))
+app.use('/', expressStaticGzip(path.join(__dirname, '../client/dist')))
 
 //routes
 app.get('/carousel', async (req, res) => {
