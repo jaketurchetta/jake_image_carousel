@@ -13,6 +13,7 @@ position: absolute;
 width: 100%;
 height: 100%;
 overflow:visible;
+z-index: 100;
 `;
 
 const ExitButton = styled.div`
@@ -76,7 +77,6 @@ const ViewPhotosLarge = styled.img`
   max-height: 75vh;
   object-fit: contain;
   cursor: pointer;
-  z-index: 2;
   /* border-radius: 16px; */
   max-width: 85%;
   margin: 0px auto;
