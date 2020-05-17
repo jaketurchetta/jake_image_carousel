@@ -14,6 +14,8 @@ const PORT = 3003;
 app.use(cors());  //need npm i cors
 app.use(express.json())
 
+// app.use(express.static(path.join(__dirname, '../client/dist')))
+
 app.use('/', expressStaticGzip(path.join(__dirname, '../client/dist')))
 
 //routes
