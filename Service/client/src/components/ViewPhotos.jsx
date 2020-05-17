@@ -73,7 +73,6 @@ const ViewPhotosLarge = styled.img`
   top: 12%;
   left: 13%;
   border-radius: 2%;
-
   max-height: 75vh;
   object-fit: contain;
   cursor: pointer;
