@@ -133,14 +133,14 @@ class ViewPhotos extends React.Component {
           <ViewPhotosLarge src={`https://6-pack.s3-us-west-1.amazonaws.com/00/${this.state.attbId}.jpg`} />
 
           <ViewPhotosPage>
-            {this.state.attbId}
-            {' '}
-            /
-            {' '}
-            18
-          </ViewPhotosPage>
+          {this.state.attbId}
+          {' '}
+          /
+          {' '}
+          {this.props.rows.length}
+        </ViewPhotosPage>
 
-
+        <ViewPhotosDescription>{this.props.rows[this.state.attbId].description}</ViewPhotosDescription>
 
           <ViewPhotosMini
             attbId={this.state.attbId}
