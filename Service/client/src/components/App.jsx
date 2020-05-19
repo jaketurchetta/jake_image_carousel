@@ -65,8 +65,6 @@ class App extends React.Component {
   }
 
   render() {
-    // console.log(this.state.data,'data');
-    // console.log(this.state.rows,'rows');
     console.log(this.state.attbId, 'this.state.attbID');
     return (
       <div>
@@ -77,8 +75,6 @@ class App extends React.Component {
                 handleViewButton={this.handleViewButton}
                 data={this.state.data}
                 handleGetAtt={this.handleGetAtt}
-                // LargeBox={this.state.LargeBox}
-                // SmallBox1={this.state.SmallBox1}
               />
             )
             : (
