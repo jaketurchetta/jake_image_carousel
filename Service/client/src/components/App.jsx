@@ -22,17 +22,17 @@ class App extends React.Component {
     this.handleViewButton = this.handleViewButton.bind(this);
     this.handleGetAtt = this.handleGetAtt.bind(this);
     this.handleRerenderButton = this.handleRerenderButton.bind(this);
+    this.getImage = this.getImage.bind(this);
   }
 
-  componentDidMount() {
-    this.getImage();
-  }
+
 
   getImage() {
     axios.get('/carousel')
       .then(({ data }) => {
+        console.log(data,'getre')
         this.setState({
-          data,
+          data: data,
           rows: data.rows,
         });
       })
@@ -63,9 +63,13 @@ class App extends React.Component {
       attbId: e.target.id,
     });
   }
-
+  componentDidMount() {
+    this.getImage();
+  }
   render() {
     console.log(this.state.attbId, 'this.state.attbID');
+    console.log(this.state.rows,'rows')
+    console.log(this.state.data,'data')
     return (
       <div>
         <div>
