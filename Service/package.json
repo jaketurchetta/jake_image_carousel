@@ -8,9 +8,9 @@
     "node": ">=6.13.0"
   },
   "scripts": {
-    "start": "node server/index.js",
+    "start": "nodemon server/index.js",
     "react-dev": "webpack -d --watch",
-    "seed": "psql -U postgres < schema.sql",
+    "seed": "psql postgres < schema.sql",
     "jest": "jest --watchAll",
     "enlint": "eslint --ext jsx . --fix"
   },

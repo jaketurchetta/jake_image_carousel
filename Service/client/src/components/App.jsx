@@ -27,8 +27,8 @@ class App extends React.Component {
 
 
 
-  getImage() {
-    axios.get('/carousel')
+  getImage(propertyid = 0) {
+    axios.get(`/properties/${propertyid}/images`)
       .then(({ data }) => {
         console.log(data,'getre')
         this.setState({
