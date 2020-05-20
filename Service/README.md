@@ -73,7 +73,15 @@
 
 **Path Parameters:**
   * `propertyid` property id
-  * `pimageid` image id
+  * `imageid` image id
+
+**Success Status Code:** `204`
+
+### Delete property
+  * DELETE `/properties/:propertyid`
+
+**Path Parameters:**
+  * `propertyid` property id
 
 **Success Status Code:** `204`
 
