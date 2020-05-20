@@ -14,7 +14,8 @@
     {
       "id": "Number",
       "property_id": "Number",
-      "url": "String"
+      "url": "String",
+      "description": "String"
     }
 ```
 
@@ -29,13 +30,13 @@
     {
       "id": "Number",
       "property_id": "Number",
-      "url": "String"
+      "url": "String",
+      "description": "String"
     }
 ```
 
-
 ### Update image
-  * PUT `/properties/:propertyid/images/:imageid`
+  * PATCH `/properties/:propertyid/images/:imageid`
 
 **Path Parameters:**
   * `propertyid` property/listing id
@@ -47,7 +48,8 @@
 
 ```json
     {
-      "url": "String"
+      "url": "String",
+      "description": "String"
     }
 ```
 
@@ -74,6 +76,7 @@
     {
       "id": "Number",
       "property_id": "Number",
-      "url": "String"
+      "url": "String",
+      "description": "String"
     }
 ```

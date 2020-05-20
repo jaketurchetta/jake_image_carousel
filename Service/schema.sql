@@ -17,7 +17,8 @@ CREATE TABLE properties(
 CREATE TABLE images(
    id      SERIAL PRIMARY KEY AUTO_INCREMENT,
    property_id   INTEGER REFERENCES properties(id),
-   url           VARCHAR(255)
+   url           VARCHAR(255),
+   description VARCHAR(255)
 );
 
 
