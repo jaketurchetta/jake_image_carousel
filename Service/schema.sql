@@ -8,17 +8,15 @@ DROP TABLE IF EXISTS properties;
 DROP TABLE IF EXISTS images;
 
 CREATE TABLE properties(
-   id   SERIAL PRIMARY KEY AUTO_INCREMENT,
-   name VARCHAR(255),
-   description   VARCHAR(255),
-   address VARCHAR(255)
+   id             SERIAL PRIMARY KEY AUTO_INCREMENT
 );
 
 CREATE TABLE images(
-   id      SERIAL PRIMARY KEY AUTO_INCREMENT,
-   property_id   INTEGER REFERENCES properties(id),
-   url           VARCHAR(255),
-   description VARCHAR(255)
+   id             SERIAL PRIMARY KEY AUTO_INCREMENT,
+   property_id    INTEGER REFERENCES properties(id),
+   position       INTEGER,
+   url            VARCHAR(255),
+   description    VARCHAR(255)
 );
 
 

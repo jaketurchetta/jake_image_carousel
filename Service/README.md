@@ -14,8 +14,21 @@
     {
       "id": "Number",
       "property_id": "Number",
+      "position": "Number",
       "url": "String",
       "description": "String"
+    }
+```
+### Add property
+  * POST `/properties`
+
+**Success Status Code:** `201`
+
+**Request Body**: Expects JSON with the following keys.
+
+```json
+    {
+      "id": "Number"
     }
 ```
 
@@ -30,6 +43,7 @@
     {
       "id": "Number",
       "property_id": "Number",
+      "position": "Number",
       "url": "String",
       "description": "String"
     }
@@ -48,6 +62,7 @@
 
 ```json
     {
+      "position": "Number",
       "url": "String",
       "description": "String"
     }
@@ -76,6 +91,7 @@
     {
       "id": "Number",
       "property_id": "Number",
+      "position": "Number",
       "url": "String",
       "description": "String"
     }
