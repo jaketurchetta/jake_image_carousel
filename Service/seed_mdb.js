@@ -1,28 +1,4 @@
-const mongoose = require('mongoose');
-mongoose.connect('mongodb://localhost/fetcher');
-
-// from Nate
-mongoose.connect('mongodb://127.0.0.1:27017/booking', {useNewUrlParser: true});
-const db = mongoose.connection;
-db.on('error', console.error.bind(console, 'connection error:'));
-db.once('open', function() {
-  console.log("we're connected!")
-});
-// end
-
-let propertiesSchema = mongoose.Schema({
-  id: {type: Number, unique: true},
-  images: [{
-    id: {type: Number, unique: true},
-    url: String,
-    description: String
-  }]
-});
-
-let Properties = mongoose.model('Properties', propertiesSchema);
-
-let save = (images) => {
-
+let save = (properties) => {
   let container = [];
   for (let i = 0; i < properties.length; i ++) {
     let repo = repos[i];

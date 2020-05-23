@@ -10,7 +10,8 @@
   "scripts": {
     "start": "nodemon server/index.js",
     "react-dev": "webpack -d --watch",
-    "seed": "psql postgres < schema.sql",
+    "tables": "psql postgres < schema.sql",
+    "seed": "node seed_psql.js",
     "jest": "jest --watchAll",
     "enlint": "eslint --ext jsx . --fix"
   },
@@ -25,6 +26,7 @@
     "enzyme-adapter-react-16": "^1.15.2",
     "express": "^4.17.1",
     "express-static-gzip": "^2.0.6",
+    "faker": "^4.1.0",
     "jest-environment-enzyme": "^7.1.2",
     "jest-enzyme": "^7.1.2",
     "pg": "^8.0.3",
