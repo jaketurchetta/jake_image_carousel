@@ -5,7 +5,6 @@ const pool = require('../database/index')
 const path = require('path');
 const expressStaticGzip = require('express-static-gzip')
 
-
 const PORT = 3003;
 
 // const {getImage} = require('./controller.js')

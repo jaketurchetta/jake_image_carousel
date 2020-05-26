@@ -1,4 +1,6 @@
 const mongoose = require('mongoose');
+const faker = require('faker');
+
 mongoose.connect('mongodb://localhost/fetcher');
 
 // from Nate
@@ -22,20 +24,12 @@ let propertiesSchema = mongoose.Schema({
 let Properties = mongoose.model('Properties', propertiesSchema);
 
 let save = (images) => {
-
   let container = [];
-  for (let i = 0; i < properties.length; i ++) {
+  for (let i = 0; i < 10000000; i++) {
     let repo = repos[i];
-    let doc = new Repo({
-      id: repo.id,
-      name: repo.name,
-      owner: { id: repo.owner.id,
-              login: repo.owner.login,
-              url: repo.owner.url,
-              repos_url: repo.owner.repos_url },
-      url: repo.url,
-      html_url: repo.html_url,
-      description: repo.description
+    let doc = new Properties({
+      id: i,
+      images: repo.description
     })
     container.push(doc);
     doc.save((err, request) => {
