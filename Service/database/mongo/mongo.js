@@ -23,6 +23,25 @@ let propertiesSchema = mongoose.Schema({
 
 let Properties = mongoose.model('Properties', propertiesSchema);
 
+let imageCount = 1;
+
+let imagesHelper = () => {
+  let propertyImages = [];
+  let imageObj = {};
+  let rand = faker.random.number({
+    'min': 5,
+    'max': 20
+  });
+  for (let j = 0; j < rand; j++) {
+    if (imageCount === 1001) {
+      imageCount = 1;
+    }
+    let description = faker.lorem.sentence();
+    let url = `https://propertypictures.s3.us-east-2.amazonaws.com/property_image${imageCount}.jpg`;
+    imageCount++;
+  }
+}
+
 let save = (images) => {
   let container = [];
   for (let i = 0; i < 10000000; i++) {
