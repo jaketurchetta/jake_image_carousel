@@ -15,3 +15,8 @@ DROP DATABASE IF EXISTS airbnbcarousel;
     url            VARCHAR(255),
     description    VARCHAR(255)
   );
+
+-- ADD CONSTRAINTS
+-- AFTER THE DATABASE HAS BEEN SEEDED !!
+
+ALTER TABLE images ADD FOREIGN KEY (property_id) REFERENCES properties(id);

@@ -2,14 +2,11 @@ const faker = require('faker');
 const fs = require('fs');
 const path = require('path');
 
-const imagesPath = path.join(__dirname, '/images.csv');
-const file = fs.createWriteStream(imagesPath);
+const propertiesPath = path.join(__dirname, '/properties.json');
+const file = fs.createWriteStream(propertiesPath);
 
 // START TIME
 console.log(Date.now());
-
-const imagesHeader = `id,property_id,position,url,description\n`;
-file.write(imagesHeader);
 
 // FOR EACH PROPERTY, SEED 5-20 IMAGES, POSITION, DESCRIPTIONS
 
@@ -20,37 +17,44 @@ const checkMemoryNative = () => {
 let imageCount = 1;
 let imageId = 0;
 
-createPropertyImages = (propertyid) => {
+createImageArray = () => {
   let rand = faker.random.number({
     'min': 5,
     'max': 20
   });
-  let data = '';
+  let imagesArray = [];
   for (let j = 0; j < rand; j++) {
     if (imageCount === 1001) {
       imageCount = 1;
     }
-    data += `${imageId},${propertyid},${j},'https://propertypictures.s3.us-east-2.amazonaws.com/property_image${imageCount}.jpg','${faker.lorem.sentence()}'\n`;
+    let imageObj = {
+      _id: imageId,
+      url: `https://propertypictures.s3.us-east-2.amazonaws.com/property_image${imageCount}.jpg`,
+      description: `${faker.lorem.sentence()}`
+    };
+    imagesArray.push(imageObj);
     imageCount++;
     imageId++;
   }
-  return data;
+  return imagesArray;
 }
 
 writeTenMillionTimes = (writer, encoding, callback) => {
   let i = 10000000;
+  let container = [];
   const writeFile = () => {
     let ok = true;
     do {
       i -= 1;
-      let data = createPropertyImages(i);
+      let property = {
+        _id: i,
+        images: createImageArray()
+      }
+      let data = JSON.stringify(property);
       if (i === 0) {
         writer.write(data, encoding, callback);
       } else {
         ok = writer.write(data, encoding)
-        if(!ok) {
-          checkMemoryNative();
-        }
       }
     } while (i > 0 && ok);
     if (i > 0) {
@@ -65,9 +69,8 @@ writeTenMillionTimes(file, 'utf-8', (err, written, string) => {
     console.log('Error writing: ', err)
   } else {
     file.end();
-    console.log('Images CSV written!')
+    console.log('Properties JSON file written!')
+    // END TIME
+    console.log(Date.now());
   }
 })
-
-// END TIME
-console.log(Date.now());
