@@ -32,5 +32,7 @@ const Counters = new Schema({
 const Property = mongoose.model('Property', Properties, 'properties')
 const Counter = mongoose.model('Counter', Counters, 'counters')
 
-module.exports = Property;
-module.exports = Counter;
+module.exports = {
+  Property: Property,
+  Counter: Counter
+}

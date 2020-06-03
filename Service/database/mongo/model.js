@@ -1,12 +1,11 @@
-const Property = require('./index.js')
-const Counter = require('./index.js')
+const Schema = require('./index.js')
 const faker = require('faker')
 const Promise = require('bluebird')
 const Q = require('Q')
 
 function getNextSequenceValue(sequenceName) {
   let deferred = Q.defer();
-  let sequenceDocument = Counter.findOneAndUpdate(
+  let sequenceDocument = Schema.Counter.findOneAndUpdate(
       { _id: sequenceName },
       { $inc: { sequence_value: 1 } },
       { new: true,
@@ -22,15 +21,32 @@ function getNextSequenceValue(sequenceName) {
   return deferred.promise;
 }
 
-let imageCount = 0;
+const getRandomNumber = (available) => {
+  let rand = faker.random.number({
+    'min': 0,
+    'max': available
+  });
+  return rand;
+}
+
+const getRandomNumberPromise = (available) => {
+  return new Promise((resolve, reject) => {
+    getRandomNumber(available, (err, rand) => {
+      if (err) reject(err)
+      else resolve(rand);
+    })
+  })
+}
+
+let imageCount = 1;
 
 module.exports = {
 
   ///// GET /////
 
   // Retrieve images for a property listing
-  getImages: (id, callback) => {
-    Property.findOne({ _id: id }, (err, results) => {
+  getImages: (propertyid, callback) => {
+    Schema.Property.findOne({ _id: propertyid }, (err, results) => {
       if (err) {
         console.log(err);
       } else {
@@ -47,7 +63,7 @@ module.exports = {
     getNextSequenceValue("propertyid")
       .then(response => {
         let emptyArray = [];
-        Property.create({ _id: response, images: emptyArray }, (err, results) => {
+        Schema.Property.create({ _id: response, images: emptyArray }, (err, results) => {
           if (err) {
             console.log(err);
           } else {
@@ -57,60 +73,44 @@ module.exports = {
       })
   },
 
-  // Add an image to a listing
-  addPropertyImage: (propertyid, callback) => {
-    getNextSequenceValue("imageid")
-    .then(response => {
-      let image = {
-        _id: response,
-        url: `https://propertypictures.s3.us-east-2.amazonaws.com/property_image${imageCount}.jpg`,
-        description: `${faker.lorem.sentence()}`
-      }
-      Property.findOne({_id: propertyid}, (err, results) => {
-        if (err) {
-          console.log(err);
-        } else {
-          console.log(results.images);
-          results.images.push(image);
-          results.save()
-          callback(null, results);
-        }
-      })
-    })
-  },
-
   // Add images to a property listing
   addPropertyImages: (propertyid, callback) => {
-    Property.findOne({_id: propertyid}, (err, results) => {
+    Schema.Property.findOne({ _id: propertyid }, (err, results) => {
       if (err) {
         console.log(err)
       } else {
-        let len = results.images.length;
-        let available = 20 - len;
-        if (len > 0) {
-          let rand = faker.random.number({
-            'min': 0,
-            'max': available
-          });
-        } else {
-          return [];
-        }
-        let imagesArray = [];
-        for (let j = 0; j < rand; j++) {
-          if (imageCount === 1001) {
-            imageCount = 1;
-          }
-          let imageObj = {
-            _id: getNextSequenceValue("imageid"),
-            url: `https://propertypictures.s3.us-east-2.amazonaws.com/property_image${imageCount}.jpg`,
-            description: `${faker.lorem.sentence()}`
-          }
-          imagesArray.push(imageObj);
-          imageCount++;
-          imageId++;
-        }
-        results.images.concat(imagesArray);
-        results.save()
+        console.log(results)
+      //   let len = results.images.length;
+      //   let available = 20 - len;
+      //   let imagesArray = [];
+      //   if (available < 1) {
+      //     return
+      //   } else {
+      //     console.log(available)
+      //     getRandomNumberPromise(available)
+      //       .then(response => {
+      //         for (let j = 0; j < response; j++) {
+      //           getNextSequenceValue("imageid")
+      //             .then(response => {
+      //               if (imageCount === 1001) {
+      //                 imageCount = 1;
+      //               }
+      //               let imageObj = {
+      //                 _id: response,
+      //                 url: `https://propertypictures.s3.us-east-2.amazonaws.com/property_image${imageCount}.jpg`,
+      //                 description: `${faker.lorem.sentence()}`
+      //               }
+      //               console.log(imageObj);
+      //               imagesArray.push(imageObj);
+      //               imageCount++;
+      //             })
+      //         }
+      //       }).then(() => {
+      //         results.images.concat(imagesArray);
+      //         results.save()
+      //       })
+      //   }
+      // }
       }
     })
   },
@@ -119,7 +119,7 @@ module.exports = {
 
   // Delete entire property
   deleteProperty: (id, callback) => {
-    Property.deleteOne({ _id: id }, (err, results) => {
+    Schema.Property.deleteOne({ _id: id }, (err, results) => {
       if (err) {
         console.log(err);
       } else {
@@ -130,29 +130,16 @@ module.exports = {
   },
 
   // Delete one image from a listing
-  deletePropertyImage: (imageId, callback) => {
-    Property.findOne({ "images._id": imageId }, (err, results) => {
+  deletePropertyImage: (imageid, callback) => {
+    Schema.Property.findOne({ "images._id": imageid }, (err, results) => {
       if (err) {
         console.log(err);
       } else {
         for (let i = 0; i < results.images; i++) {
-          if (results.images[i]._id === imageId) {
+          if (results.images[i]._id === imageid) {
             results.images.splice(i, 1);
           }
         }
-        results.save();
-        callback(null, results);
-      }
-    });
-  },
-
-  // Delete all images for a listing
-  deletePropertyImages: (id, callback) => {
-    Property.findOne({ _id: id }, (err, results) => {
-      if (err) {
-        console.log(err);
-      } else {
-        results.images = [];
         results.save();
         callback(null, results);
       }
@@ -164,7 +151,7 @@ module.exports = {
   // Update image, image url, or image description
   updateImage: (image, imageId, callback) => {
     const { _id, url, description } = image;
-    Property.findOne({ "image._id": imageId }, image, (err, results) => {
+    Schema.Property.findOne({ "image._id": imageId }, image, (err, results) => {
       if (err) {
         console.log(err);
       } else {

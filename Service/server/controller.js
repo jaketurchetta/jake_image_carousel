@@ -7,23 +7,13 @@ module.exports = {
           console.log(err);
           res.status(500).end();
         } else {
+          console.log(results)
           res.status(200).json(results);
         }
     })
   },
   addProperty: (req, res) => {
-    model.addProperty((err, results) => {
-      if (err) {
-        console.log(err);
-        res.status(500).end();
-      } else {
-        console.log(results)
-        res.status(201).json(results);
-      }
-    })
-  },
-  addPropertyImage: (req, res) => {
-    model.addPropertyImage(req.params.propertyid, (err, results) => {
+    model.addProperty(req, (err, results) => {
       if (err) {
         console.log(err);
         res.status(500).end();
@@ -45,7 +35,7 @@ module.exports = {
     })
   },
   deleteProperty: (req, res) => {
-    model.deleteGrocery(req.params.id, (err, results) => {
+    model.deleteProperty(req.params.propertyid, (err, results) => {
       if (err) {
         console.log(err);
         res.status(500).end();
@@ -56,24 +46,13 @@ module.exports = {
     });
   },
   deletePropertyImage: (req, res) => {
-    model.deleteGrocery(req.params.id, (err, results) => {
+    model.deletePropertyImage(req.params.imageid, (err, results) => {
       if (err) {
         console.log(err);
         res.status(500).end();
       } else {
         console.log(results)
-        res.status(204).json('Property deleted!');
-      }
-    });
-  },
-  deletePropertyImages: (req, res) => {
-    model.deleteGrocery(req.params.id, (err, results) => {
-      if (err) {
-        console.log(err);
-        res.status(500).end();
-      } else {
-        console.log(results)
-        res.status(204).json('Property deleted!');
+        res.status(204).json('Image deleted!');
       }
     });
   },
