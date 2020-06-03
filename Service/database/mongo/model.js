@@ -21,25 +21,6 @@ function getNextSequenceValue(sequenceName) {
   return deferred.promise;
 }
 
-const getRandomNumber = (available) => {
-  let rand = faker.random.number({
-    'min': 0,
-    'max': available
-  });
-  return rand;
-}
-
-const getRandomNumberPromise = (available) => {
-  return new Promise((resolve, reject) => {
-    getRandomNumber(available, (err, rand) => {
-      if (err) reject(err)
-      else resolve(rand);
-    })
-  })
-}
-
-let imageCount = 1;
-
 module.exports = {
 
   ///// GET /////
@@ -80,37 +61,6 @@ module.exports = {
         console.log(err)
       } else {
         console.log(results)
-      //   let len = results.images.length;
-      //   let available = 20 - len;
-      //   let imagesArray = [];
-      //   if (available < 1) {
-      //     return
-      //   } else {
-      //     console.log(available)
-      //     getRandomNumberPromise(available)
-      //       .then(response => {
-      //         for (let j = 0; j < response; j++) {
-      //           getNextSequenceValue("imageid")
-      //             .then(response => {
-      //               if (imageCount === 1001) {
-      //                 imageCount = 1;
-      //               }
-      //               let imageObj = {
-      //                 _id: response,
-      //                 url: `https://propertypictures.s3.us-east-2.amazonaws.com/property_image${imageCount}.jpg`,
-      //                 description: `${faker.lorem.sentence()}`
-      //               }
-      //               console.log(imageObj);
-      //               imagesArray.push(imageObj);
-      //               imageCount++;
-      //             })
-      //         }
-      //       }).then(() => {
-      //         results.images.concat(imagesArray);
-      //         results.save()
-      //       })
-      //   }
-      // }
       }
     })
   },
