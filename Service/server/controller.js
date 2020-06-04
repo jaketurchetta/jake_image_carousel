@@ -7,7 +7,7 @@ module.exports = {
           console.log(err);
           res.status(500).end();
         } else {
-          console.log(results)
+          // console.log(results)
           res.status(200).json(results);
         }
     })
@@ -18,7 +18,7 @@ module.exports = {
         console.log(err);
         res.status(500).end();
       } else {
-        console.log(results)
+        // console.log(results)
         res.status(201).json(results);
       }
     })
@@ -29,7 +29,7 @@ module.exports = {
         console.log(err);
         res.status(500).end();
       } else {
-        console.log(results)
+        // console.log(results)
         res.status(201).json(results);
       }
     })
@@ -40,7 +40,7 @@ module.exports = {
         console.log(err);
         res.status(500).end();
       } else {
-        console.log(results)
+        // console.log(results)
         res.status(204).json('Property deleted!');
       }
     });
@@ -51,7 +51,7 @@ module.exports = {
         console.log(err);
         res.status(500).end();
       } else {
-        console.log(results)
+        // console.log(results)
         res.status(204).json('Image deleted!');
       }
     });
@@ -62,7 +62,7 @@ module.exports = {
         console.log(err);
         res.status(500).end();
       } else {
-        console.log(results)
+        // console.log(results)
         res.status(201).json(results);
       }
     })
