@@ -1,7 +1,7 @@
 const Schema = require('./index.js')
 const faker = require('faker')
 const Promise = require('bluebird')
-const Q = require('Q')
+const Q = require('q')
 
 function getNextSequenceValue(sequenceName) {
   let deferred = Q.defer();
