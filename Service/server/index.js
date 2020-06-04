@@ -1,6 +1,5 @@
 require('newrelic');
 const express = require('express');
-const cors = require('cors')
 const path = require('path');
 const bodyParser = require('body-parser');
 const expressStaticGzip = require('express-static-gzip')
@@ -12,7 +11,6 @@ const PORT = 3003;
 
 // Middleware
 app.use(morgan('dev'));
-app.use(cors());
 app.use(bodyParser.json());
 app.use('/', expressStaticGzip(path.join(__dirname, '../client/dist')))
 
