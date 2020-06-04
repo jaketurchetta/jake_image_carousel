@@ -13,13 +13,13 @@ export let options = {
     }
   },
   stages: [
-    { duration: '2m', target: 1000 }, // beyond the breaking point
+    { duration: '2m', target: 1000 },
     { duration: '5m', target: 1000 },
-    { duration: '3m', target: 1100 }, // beyond the breaking point
-    { duration: '3m', target: 1200 }, // beyond the breaking point
-    { duration: '3m', target: 1300 }, // beyond the breaking point
-    { duration: '3m', target: 1400 }, // beyond the breaking point
-    { duration: '3m', target: 1500 }, // beyond the breaking point
+    { duration: '3m', target: 1100 },
+    { duration: '3m', target: 1200 },
+    { duration: '3m', target: 1300 },
+    { duration: '3m', target: 1400 },
+    { duration: '3m', target: 1500 }
   ]
 };
 
