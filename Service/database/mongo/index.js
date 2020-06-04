@@ -1,6 +1,6 @@
 const mongoose = require('mongoose')
 
-mongoose.connect('mongodb://3.16.95.115:27017/airbnb', {
+mongoose.connect('mongodb://jake:carousel@3.16.95.115/airbnb', {
   useNewUrlParser: true,
   useUnifiedTopology: true
 })
