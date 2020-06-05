@@ -7,7 +7,7 @@ const morgan = require('morgan');
 
 const {getImages, addProperty, addPropertyImage, addPropertyImages, deleteProperty, deletePropertyImage, deletePropertyImages, updateImage} = require('./controller.js');
 const app = express();
-const PORT = 3002;
+const PORT = 3001;
 
 // Middleware
 app.use(morgan('dev'));
